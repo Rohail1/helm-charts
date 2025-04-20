@@ -1,0 +1,12 @@
+# 1. Set our own wp username
+# 2. Set custom wp password
+# 3. Add Autoscaling
+
+wordpressUsername: roxas
+existingSecret: wp-pass
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+service:
+  type: NodePort
