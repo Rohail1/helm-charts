@@ -1,0 +1,24 @@
+## @param replicaCount Number of nginx replica to deploy
+replicaCount: 1
+
+
+## @param container.http
+containerPort:
+  http: 80
+
+
+## @param image.name Nginx image name to use
+## @param image.tag Nginx tag to use
+
+image:
+  name: nginx
+  tag: "1.27.1"
+
+## @param service.type Type of service
+## @param service.port Port Number for service
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+
