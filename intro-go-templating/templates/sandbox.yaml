@@ -1,0 +1,14 @@
+# YAML comment in final file
+test: {{ replace "String" "Roxas" .Values.test | lower }}
+labels:
+  app: {{ .Release.Name }}
+  chart: {{ .Chart.Name }}
+  {{- if eq .Values.evironment "production" }}
+  environment: production
+  build: stable
+  public-ingress: true
+  {{- else }}
+  environment: dev
+  build: unstable
+  public-ingress: false
+  {{- end}}
